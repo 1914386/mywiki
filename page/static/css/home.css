@@ -5,9 +5,10 @@
 
 .wiki-table td{
 	padding: 5px 10px;
-	border: 1px solid #ddd;
+	border: 1px solid #dddddd;
 }
 
 .table-title{
-	background-color:#FAD766;
+	background-color:#912443;
+	color: white;
 }
