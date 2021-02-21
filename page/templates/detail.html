@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <!-- static 안의 CSS 파일 불러오기 -->
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    <title>{{ post.title }} - 동덕여자고등학교 위키</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 제목 -->
+        <h2 class="featurette-heading">{{ post.title }}
+            <!-- 수정, 삭제 버튼-->
+            <div class="btn-group">
+                <a href="#" class="btn btn-sm btn-outline-secondary">수정</a>
+                <a href="#" class="btn btn-sm btn-outline-danger">삭제</a>
+            </div>
+        </h2>
+        <!-- 본문 -->
+        <p>{{ post.text }}</p>
+        <!-- 이미지 -->
+        {% if post.image %}
+            <img src="{{ post.image.url }}" width="100%" alt="Post_Image">
+        {% endif %}
+    </div> 
+</body>
+
+{% endblock %}

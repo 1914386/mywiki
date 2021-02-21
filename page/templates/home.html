@@ -108,7 +108,7 @@
         {% for post in posts %}
             <h2>{{ post.title }}</h2>
             <p>{{ post.update_date }}</p>
-            <p>{{ post.text | truncatechars:20 }}...자세히 알아보기</p>
+            <p>{{ post.text | truncatechars:20 }}<a href="{% url 'detail' post.id %}">...자세히 알아보기</a> </p>
         {% endfor %}
     </div> 
 </body>
