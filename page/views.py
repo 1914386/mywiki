@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from page.models import Post
 from django.utils import timezone
+from .forms import postUpdate
 
 # Create your views here.
 
@@ -28,3 +29,20 @@ def postcreate(request):
     post.update_date = timezone.now()
     post.save()
     return redirect('/post/' + str(post.id))
+
+# 글 수정 함수
+def update(request, post_id):
+    post = Post.objects.get(id=post_id)
+    if request.method == 'POST':
+        form = postUpdate(request)
+        post.title = request.POST['title']
+        post.text = request.POST['text']
+        if 'image' in request.FILES:
+            post.image = request.FILES['image']
+        post.update_date = timezone.now()
+        post.save()
+        return redirect('/post/' + str(post.id))
+    
+    else:
+        form = postUpdate(instance=post)
+        return render(request, 'update.html', {'form':form})
