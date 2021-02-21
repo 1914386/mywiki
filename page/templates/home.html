@@ -1,4 +1,7 @@
+{% extends 'base.html' %}
 {% load static %}
+
+{% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,76 +14,104 @@
 </head>
 
 <body>
-    <!-- 학교 로고 및 학교명-->
-    <img src="{% static 'images/dongduk.png' %}" width="35" height="35">
-    <span>동덕여자고등학교</span>
-    
-    <br><br>
+    <div id="main">
+        <div id="left_main">
+            <!-- About -->
+            <div class="aboutContainer">
+                <h4>About</h4>
+                <p>동덕여자고등학교 위키는 누구나 기여할 수 있는 위키입니다.</p>
+            </div>
+            <!-- 목차 -->
+            <div class="contentContainer">
+                <h4>목차</h4>
+                <ol>
+                    <li><a href="#">개요</a></li>
+                    <li><a href="#">학교 연혁</a></li>
+                    <li><a href="#">교훈 및 상징</a></li>
+                    <li><a href="#">학교 특징</a></li>
+                    <li><a href="#">학교 시설</a></li>
+                    <li><a href="#">학교 생활</a></li>
+                </ol>
+            </div>
+            <!-- 다른 학교 위키 바로가기 -->
+            <div class="schoolContainer">
+                <h4>바로가기</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">서문여고 위키</a></li>
+                    <li><a href="#">세화여고 위키</a></li>
+                    <li><a href="#">경문고 위키</a></li>
+                </ol>
+            </div>
+        </div>
+        <div id="right_main">
+            <!-- 학교 소개 표-->
+            <table border="1" class="wiki-table">
+                <tr>
+                    <td colspan="2" class="table-title">
+                        <strong>동덕여자고등학교</strong><br>Dongduk Girls' High School
+                    </td>
+                </tr>
 
-    <!-- 학교 소개 표-->
-    <table border="1" class="wiki-table">
-        <tr>
-            <td colspan="2" class="table-title">
-                <strong>동덕여자고등학교</strong><br>Dongduk Girls' High School
-            </td>
-        </tr>
+                <tr>
+                    <td colspan="2">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.3581506206656!2d126.99023731530916!3d37.475873879814955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca0548767ddf7%3A0x2e4a80cb77a1e92d!2z64-Z642V7Jes7J6Q6rOg65Ox7ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1611992502127!5m2!1sko!2skr" width="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Dongduk_Girls_High_School.jpg" width="100%">
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td><strong>교훈</strong></td>
+                    <td>덕성을 함양하자, 지능을 계발하자, 창의에 주력하자</td>
+                </tr>
+        
+                <tr>
+                    <td><strong>개교</strong></td>
+                    <td>1910년</td>
+                </tr>
+        
+                <tr>
+                    <td><strong>교장</strong></td>
+                    <td>조승현</td>
+                </tr>
 
-        <tr>
-            <td colspan="2">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.3581506206656!2d126.99023731530916!3d37.475873879814955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca0548767ddf7%3A0x2e4a80cb77a1e92d!2z64-Z642V7Jes7J6Q6rOg65Ox7ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1611992502127!5m2!1sko!2skr" width="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-            </td>
-        </tr>
-        
-        <tr>
-            <td colspan="2">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Dongduk_Girls_High_School.jpg" width="100%">
-            </td>
-        </tr>
-        
-        <tr>
-            <td><strong>교훈</strong></td>
-            <td>덕성을 함양하자, 지능을 계발하자, 창의에 주력하자</td>
-        </tr>
-        
-        <tr>
-            <td><strong>개교</strong></td>
-            <td>1910년</td>
-        </tr>
-        
-        <tr>
-            <td><strong>교장</strong></td>
-            <td>조승현</td>
-        </tr>
+                <tr>
+                    <td><strong>교목</strong></td>
+                    <td>느티나무</td>
+                </tr>
 
-        <tr>
-            <td><strong>교목</strong></td>
-            <td>느티나무</td>
-        </tr>
-
-        <tr>
-            <td><strong>교화</strong></td>
-            <td>목화</td>
-        </tr>
+                <tr>
+                    <td><strong>교화</strong></td>
+                    <td>목화</td>
+                </tr>
         
-        <tr>
-            <td><strong>주소</strong></td>
-            <td>서울특별시 서초구 효령로2길 123-5 (방배동)</td>
-        </tr>
+                <tr>
+                    <td><strong>주소</strong></td>
+                    <td>서울특별시 서초구 효령로2길 123-5 (방배동)</td>
+                </tr>
         
-        <tr>
-            <td><strong>홈페이지</strong></td>
-            <td><a href="http://dongduk.sen.hs.kr/index.do">동덕여자고등학교 홈페이지</a></td>
-        </tr>
-    </table>
+                <tr>
+                    <td><strong>홈페이지</strong></td>
+                    <td><a href="http://dongduk.sen.hs.kr/index.do">동덕여자고등학교 홈페이지</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
-    <!-- 게시글 모음 -->
-    <h1>게시글 모음</h1>
-    {% for post in posts %}
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.update_date }}</p>
-        <p>{{ post.text | truncatechars:100 }}</p>
-    {% endfor %}
-    
+    <div id="bottom_main">
+        <!-- 게시글 모음 -->
+        <h1 class="postContainer">게시글 모음</h1>
+        {% for post in posts %}
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.update_date }}</p>
+            <p>{{ post.text | truncatechars:20 }}...자세히 알아보기</p>
+        {% endfor %}
+    </div> 
 </body>
 
 </html>
+{% endblock %}
