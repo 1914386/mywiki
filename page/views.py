@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from page.models import Post
+from page.models import Post, Comment
 from django.utils import timezone
 from .forms import postUpdate
 
@@ -8,7 +8,8 @@ from .forms import postUpdate
 # 홈 화면
 def home(request):
     posts = Post.objects.all()
-    return render(request, 'home.html', {'posts':posts})
+    comments = Comment.objects.all()
+    return render(request, 'home.html', {'posts':posts, 'comments':comments})
 
 # 디테일 화면
 def detail(request, post_id):
@@ -52,3 +53,18 @@ def delete(request, post_id):
     post = Post.objects.get(id=post_id)
     post.delete()
     return redirect('/')
+
+# 댓글 화면
+def comment(request):
+    return render(request, 'comment.html')
+
+# 댓글 저장 함수
+def comment_write(request):
+    posts = Post.objects.all()
+    comments = Comment.objects.all()
+    comment = Comment()
+    if request.method == 'POST':
+        comment.create_date = timezone.now()
+        comment.content = request.POST['content']
+        comment.save()
+        return render(request, 'home.html', {'posts':posts, 'comments':comments})

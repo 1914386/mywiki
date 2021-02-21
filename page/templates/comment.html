@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>댓글 달기</h2>
+    <form method="POST" action="{% url 'comment_write' %}">
+        {% csrf_token %}
+        <textarea cols="50" rows="3" name="content"></textarea>
+        <br><br>
+        <input class="btn btn-primary" type="submit" value="저장">
+    </form>
+{% endblock %}
