@@ -20,6 +20,8 @@
                 <a href="{% url 'delete' post.id %}" class="btn btn-sm btn-outline-danger">삭제</a>
             </div>
         </h2>
+        <!-- 최종 수정 시각 -->
+        <p>최종 수정 시각: {{ post.update_date }}</p>
         <!-- 본문 -->
         <p>{{ post.text }}</p>
         <!-- 이미지 -->
