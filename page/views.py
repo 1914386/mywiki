@@ -46,3 +46,9 @@ def update(request, post_id):
     else:
         form = postUpdate(instance=post)
         return render(request, 'update.html', {'form':form})
+
+# 글 삭제 함수
+def delete(request, post_id):
+    post = Post.objects.get(id=post_id)
+    post.delete()
+    return redirect('/')
